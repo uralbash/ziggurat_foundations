@@ -25,7 +25,6 @@ matrix:
       env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
     - python: "pypy3"
-      env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
  - pip install flake8 rstcheck
