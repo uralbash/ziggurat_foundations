@@ -25,13 +25,15 @@ matrix:
       env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
     - python: "pypy3"
+      env: BCRYPT="enabled"
 
 install:
  - pip install flake8 rstcheck
 
 script:
   - python setup.py develop
-  - py.test ziggurat_foundations/tests.py
+  - if [ -n "$BCRYPT" ]; then pip install bcrypt; fi
+  - py.test ziggurat_foundations/tests.py --durations=10
 
   # flake8 and rstcheck
   - if [ -n "$RSTCHECK" ]; then ./test.sh; fi
