@@ -23,7 +23,7 @@ matrix:
 install:
   - sudo apt-get install pypy-dev
   - git clone https://github.com/pyca/bcrypt.git 
-  - cd bcrypt && pypy setup.py install
+  - cd bcrypt && pypy setup.py install && cd ../
   - pip install flake8 rstcheck
 
 script:
