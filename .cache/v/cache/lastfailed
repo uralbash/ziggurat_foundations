@@ -1,0 +1,5 @@
+{
+  "ziggurat_foundations/tests.py::TestModel::()::test_get_dict": true, 
+  "ziggurat_foundations/tests.py::TestModel::()::test_get_dict_excluded": true, 
+  "ziggurat_foundations/tests.py::TestModel::()::test_get_dict_included": true
+}
