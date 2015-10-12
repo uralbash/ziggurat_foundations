@@ -28,11 +28,11 @@ matrix:
       env: BCRYPT="enabled"
 
 install:
- - pip install flake8 rstcheck
+  - if [ -n "$BCRYPT" ]; then pip install bcrypt; fi
+  - pip install flake8 rstcheck
 
 script:
   - python setup.py develop
-  - if [ -n "$BCRYPT" ]; then pip install bcrypt; fi
   - py.test ziggurat_foundations/tests.py --durations=10
 
   # flake8 and rstcheck
