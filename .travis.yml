@@ -26,6 +26,7 @@ install:
 
 script:
   - python setup.py develop
+  - pip install cffi -U -y
   - pip install bcrypt
   - py.test ziggurat_foundations/tests.py --durations=10
 
