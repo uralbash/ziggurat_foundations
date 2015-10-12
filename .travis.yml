@@ -12,25 +12,18 @@ notifications:
     on_success: change
     on_failure: always
 
-python:
-  - "3.3"
-  - "3.4"
-
 matrix:
   include:
-    - python: "2.7"
-      env: RSTCHECK=1
-
     - python: "pypy"
       # env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
     - python: "pypy3"
-      env: PASSLIB_BUILTIN_BCRYPT="enabled"
+      # env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
-  - sudo apt-get install build-essential libffi-dev python-dev 
-  - pip install bcrypt
-  - pip list
+  - sudo apt-get install pypy-dev
+  - git clone https://github.com/pyca/bcrypt.git 
+  - cd bcrypt && pypy setup.py install
   - pip install flake8 rstcheck
 
 script:
