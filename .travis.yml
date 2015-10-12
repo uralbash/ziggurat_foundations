@@ -5,7 +5,7 @@
 # Copyright © 2014 uralbash <root@uralbash.ru>
 #
 # Distributed under terms of the MIT license.
-sudo: false
+# sudo: false
 language: python
 
 notifications:
@@ -22,14 +22,13 @@ matrix:
       env: RSTCHECK=1
 
     - python: "pypy"
-      env: PASSLIB_BUILTIN_BCRYPT="enabled"
+      # env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
     - python: "pypy3"
-      env: BCRYPT="enabled"
       env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
-  - if [ -n "$BCRYPT" ]; then pip uninstall py-bcrypt; fi
+  - sudo apt-get install python-bcrypt
   - pip install flake8 rstcheck
 
 script:
