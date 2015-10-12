@@ -28,7 +28,9 @@ matrix:
       env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
-  - sudo apt-get install python-bcrypt
+  - sudo apt-get install build-essential libffi-dev python-dev 
+  - pip install bcrypt
+  - pip list
   - pip install flake8 rstcheck
 
 script:
