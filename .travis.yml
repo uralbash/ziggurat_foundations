@@ -21,12 +21,12 @@ matrix:
       # env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
-  - sudo apt-get install pypy-dev
+  # - sudo apt-get install pypy-dev
   - pip install flake8 rstcheck
 
 script:
   - python setup.py develop
-  - pip uninstall bcrypt -y
+  # - pip uninstall bcrypt -y
   - pip install py-bcrypt
   - py.test ziggurat_foundations/tests.py --durations=10
 
