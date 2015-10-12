@@ -26,9 +26,10 @@ matrix:
 
     - python: "pypy3"
       env: BCRYPT="enabled"
+      env: PASSLIB_BUILTIN_BCRYPT="enabled"
 
 install:
-  - if [ -n "$BCRYPT" ]; then pip install bcrypt; fi
+  - if [ -n "$BCRYPT" ]; then pip uninstall py-bcrypt; fi
   - pip install flake8 rstcheck
 
 script:
