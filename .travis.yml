@@ -27,7 +27,7 @@ install:
 
 script:
   - python setup.py develop
-  - pip uninstall bcrypt
+  - pip uninstall -y bcrypt
   - pip install ./bcrypt/
   - pip list
   - py.test ziggurat_foundations/tests.py --durations=10
